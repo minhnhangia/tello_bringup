@@ -9,6 +9,7 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
+  <exec_depend>tello_driver</exec_depend>
   <exec_depend>tello_midas</exec_depend>
   <exec_depend>tello_ros</exec_depend>
 
