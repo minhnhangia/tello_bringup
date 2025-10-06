@@ -23,8 +23,8 @@ def generate_launch_description():
 
 	node = Node(
 		package='tello_midas',
-		executable='multi_midas_node',
-		name='multi_midas_node',
+		executable='multi_midas_inference',
+		name='multi_midas_inference',
 		output='screen',
 		parameters=[params]
 	)
