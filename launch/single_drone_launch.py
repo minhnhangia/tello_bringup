@@ -11,6 +11,7 @@ def generate_launch_description():
     # camera info file (shared for all drones here)
     pkg_tello_driver = get_package_share_directory('tello_driver')
     camera_info_path = os.path.join(pkg_tello_driver, 'cfg', 'camera_info.yaml')
+    camera_info_path_down = os.path.join(pkg_tello_driver, 'cfg', 'camera_down_info.yaml')
 
     # Load the drones list
     with open(config_file, 'r') as f:
@@ -29,6 +30,7 @@ def generate_launch_description():
             'data_port': drone['data_port'],
             'video_port': drone['video_port'],
             'camera_info_path': camera_info_path,
+            'camera_info_path_down' : camera_info_path_down
             'odom_frame_id': drone['odom_frame_id'],
             'base_frame_id': drone['base_frame_id'],
             'use_sim_time': False
