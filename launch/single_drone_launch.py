@@ -30,7 +30,7 @@ def generate_launch_description():
             'data_port': drone['data_port'],
             'video_port': drone['video_port'],
             'camera_info_path': camera_info_path,
-            'camera_info_path_down' : camera_info_path_down
+            'camera_info_path_down' : camera_info_path_down,
             'odom_frame_id': drone['odom_frame_id'],
             'base_frame_id': drone['base_frame_id'],
             'use_sim_time': False
