@@ -1,0 +1,10 @@
+drones:
+  - name: tello1
+    node_name: tello_driver
+    drone_ip: '192.168.10.1'
+    command_port: 38065
+    drone_port: 8889
+    data_port: 8890
+    video_port: 11111
+    odom_frame_id: 'odom'
+    base_frame_id: 'base_link'
