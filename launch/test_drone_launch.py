@@ -4,7 +4,7 @@ from ament_index_python.packages import get_package_share_directory
 import os
 import yaml
 
-"""Single drone bringup for direct connection to telloincluding:
+"""Single drone bringup for direct WiFi connection to tello including:
  - tello_driver (already parameterized via drone_params.yaml)
  - MiDaS depth inference (tello_midas/midas_inference)
  - MiDaS depth analysis (tello_midas/midas_analysis)
@@ -66,7 +66,8 @@ def generate_launch_description():
                 'model_type': 'MiDaS_small',
                 'input_topic': 'image_raw',
                 'output_raw_topic': 'depth/raw'
-            }]
+            }],
+            respawn=True
         ))
 
         # 3. MiDaS analysis
@@ -81,7 +82,8 @@ def generate_launch_description():
                 'output_colormap_topic': 'depth/colormap',
                 'output_annotated_colormap_topic': 'depth/colormap_annotated',
                 'output_colormap_analysis_topic': 'depth/analysis'
-            }]
+            }],
+            respawn=True
         ))
 
         # 4. ArUco tracker
@@ -111,7 +113,8 @@ def generate_launch_description():
             name='aruco_tracker',
             namespace=ns,
             output='screen',
-            parameters=[aruco_params]
+            parameters=[aruco_params],
+            respawn=True
         ))
 
     return LaunchDescription(nodes)
