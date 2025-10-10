@@ -2,20 +2,20 @@
 drones:
   - name: tello1
     node_name: tello_driver
-    drone_ip: '192.168.10.1'
-    command_port: 8889
-    drone_port: 8889
-    data_port: 8890
-    video_port: 11111
+    drone_ip: '192.168.0.107'
+    command_port: 38065
+    drone_port: 9007
+    data_port: 8007
+    video_port: 11107
     odom_frame_id: 'odom'
     base_frame_id: 'base_link'
 
-  - name: tello2
-    node_name: tello_driver
-    drone_ip: '192.168.20.1'
-    command_port: 8899
-    drone_port: 8899
-    data_port: 8900
-    video_port: 11121
-    odom_frame_id: 'odom'
-    base_frame_id: 'base_link'
+  # - name: tello7
+  #   node_name: tello_driver
+  #   drone_ip: '192.168.0.107'
+  #   command_port: 8889
+  #   drone_port: 9007
+  #   data_port: 8007
+  #   video_port: 11107
+  #   odom_frame_id: 'odom'
+  #   base_frame_id: 'base_link'
