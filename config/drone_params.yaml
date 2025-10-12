@@ -9,6 +9,7 @@ drones:
     video_port: 11107
     odom_frame_id: 'odom'
     base_frame_id: 'base_link'
+    is_ext_tof_attached: true
 
   # - name: tello7
   #   node_name: tello_driver
