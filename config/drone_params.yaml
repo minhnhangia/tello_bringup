@@ -1,6 +1,6 @@
 # Configuration file for multiple Tello drones
 drones:
-  - name: tello1
+  - name: tello7
     node_name: tello_driver
     drone_ip: '192.168.0.107'
     command_port: 38065
@@ -11,12 +11,13 @@ drones:
     base_frame_id: 'base_link'
     is_ext_tof_attached: true
 
-  # - name: tello7
-  #   node_name: tello_driver
-  #   drone_ip: '192.168.0.107'
-  #   command_port: 8889
-  #   drone_port: 9007
-  #   data_port: 8007
-  #   video_port: 11107
-  #   odom_frame_id: 'odom'
-  #   base_frame_id: 'base_link'
+  - name: tello4
+    node_name: tello_driver
+    drone_ip: '192.168.0.104'
+    command_port: 38064
+    drone_port: 9004
+    data_port: 8004
+    video_port: 11104
+    odom_frame_id: 'odom'
+    base_frame_id: 'base_link'
+    is_ext_tof_attached: true
