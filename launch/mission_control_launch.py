@@ -26,6 +26,7 @@ def generate_launch_description():
         namespace=drone_ns,
         output='screen',
         parameters=[{
+            'drone_id': drone_ns,
             # Expose key tunables here (optional overrides). If omitted the node uses its defaults.
             # 'yaw_speed': 0.5,
             # 'forward_speed': 0.2,
