@@ -30,4 +30,12 @@ def generate_launch_description():
         respawn=True
 	))
 
+    nodes.append(Node(
+        package='tello_swarm',
+        executable='marker_manager',
+        name='marker_manager',
+        output='screen',
+        respawn=True
+    ))
+
     return LaunchDescription(nodes)
