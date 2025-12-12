@@ -2,6 +2,8 @@ from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
+from ament_index_python.packages import get_package_share_directory
+import os
 
 """Launch mission_control node for a single drone namespace.
 
@@ -19,19 +21,29 @@ def generate_launch_description():
 
     drone_ns = LaunchConfiguration('drone_ns')
 
+    # Load waypoint configuration
+    config_dir = os.path.join(
+        get_package_share_directory('tello_bringup'),
+        'config'
+    )
+    waypoints_config = os.path.join(config_dir, 'mission_waypoints.yaml')
+
     mission_control_node = Node(
         package='mission_control',
         executable='mission_control',
         name='mission_control',
         namespace=drone_ns,
         output='screen',
-        parameters=[{
-            'drone_id': drone_ns,
-            # Expose key tunables here (optional overrides). If omitted the node uses its defaults.
-            # 'yaw_speed': 0.5,
-            # 'forward_speed': 0.2,
-            # 'sideway_speed': 0.1,
-        }]
+        parameters=[
+            waypoints_config,
+            {
+                'drone_id': drone_ns,
+                # Expose key tunables here (optional overrides). If omitted the node uses its defaults.
+                # 'yaw_speed': 0.5,
+                # 'forward_speed': 0.2,
+                # 'sideway_speed': 0.1,
+            }
+        ]
     )
 
     return LaunchDescription([

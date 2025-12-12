@@ -1,0 +1,26 @@
+# Waypoint sequences for each drone in the fleet
+# Format: "id:<marker_id>,action:<post_action_command>"
+# post_action can be Tello SDK commands (e.g., "ccw 90", "cw 45") or "none"
+
+tello7:
+  mission_control:
+    ros__parameters:
+      enable_waypoint_navigation: true
+      waypoint_sequence:
+        - "id:1,action:cw 90"
+        - "id:2,action:ccw 90"
+        - "id:8,action:none"
+
+tello4:
+  mission_control:
+    ros__parameters:
+      enable_waypoint_navigation: true
+      waypoint_sequence:
+        - "id:60,action:none"
+        - "id:61,action:ccw 90"
+
+tello17:
+  mission_control:
+    ros__parameters:
+      enable_waypoint_navigation: false
+      waypoint_sequence: []
