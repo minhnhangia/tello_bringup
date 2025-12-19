@@ -6,21 +6,28 @@ tello7:
   mission_control:
     ros__parameters:
       enable_waypoint_navigation: true
+      standby_delay: 0.0
       waypoint_sequence:
         - "id:1,action:cw 90"
-        - "id:2,action:ccw 90"
+        - "id:2,action:cw 90"
         - "id:8,action:none"
 
 tello4:
   mission_control:
     ros__parameters:
       enable_waypoint_navigation: true
+      standby_delay: 5.0
       waypoint_sequence:
-        - "id:60,action:none"
-        - "id:61,action:ccw 90"
+        - "id:1,action:cw 90"
+        - "id:2,action:cw 90"
+        - "id:8,action:none"
 
 tello17:
   mission_control:
     ros__parameters:
       enable_waypoint_navigation: false
-      waypoint_sequence: []
+      standby_delay: 10.0
+      waypoint_sequence:
+        - "id:1,action:cw 90"
+        - "id:2,action:cw 90"
+        - "id:8,action:none"
