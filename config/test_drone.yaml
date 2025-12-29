@@ -1,5 +1,5 @@
 drones:
-  - name: tello1
+  - name: tello7
     node_name: tello_driver
     drone_ip: '192.168.10.1'
     command_port: 38065
