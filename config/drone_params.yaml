@@ -32,3 +32,14 @@ drones:
     odom_frame_id: 'odom'
     base_frame_id: 'base_link'
     is_ext_tof_attached: true
+
+  - name: tello1
+    node_name: tello_driver
+    drone_ip: '192.168.0.101'
+    command_port: 38067
+    drone_port: 9001
+    data_port: 8001
+    video_port: 11101
+    odom_frame_id: 'odom'
+    base_frame_id: 'base_link'
+    is_ext_tof_attached: true
