@@ -7,8 +7,6 @@ drones:
     drone_port: 9007
     data_port: 8007
     video_port: 11107
-    odom_frame_id: 'odom'
-    base_frame_id: 'base_link'
     is_ext_tof_attached: true
 
   - name: tello4
@@ -18,8 +16,6 @@ drones:
     drone_port: 9004
     data_port: 8004
     video_port: 11104
-    odom_frame_id: 'odom'
-    base_frame_id: 'base_link'
     is_ext_tof_attached: true
 
   - name: tello17
@@ -29,8 +25,6 @@ drones:
     drone_port: 9017
     data_port: 8017
     video_port: 11117
-    odom_frame_id: 'odom'
-    base_frame_id: 'base_link'
     is_ext_tof_attached: true
 
   - name: tello1
@@ -40,6 +34,22 @@ drones:
     drone_port: 9001
     data_port: 8001
     video_port: 11101
-    odom_frame_id: 'odom'
-    base_frame_id: 'base_link'
+    is_ext_tof_attached: true
+
+  - name: tello20
+    node_name: tello_driver
+    drone_ip: '192.168.0.120'
+    command_port: 38068
+    drone_port: 9020
+    data_port: 8020
+    video_port: 11120
+    is_ext_tof_attached: true
+
+  - name: tello21
+    node_name: tello_driver
+    drone_ip: '192.168.0.121'
+    command_port: 38069
+    drone_port: 9021
+    data_port: 8021
+    video_port: 11121
     is_ext_tof_attached: true

@@ -6,6 +6,4 @@ drones:
     drone_port: 8889
     data_port: 8890
     video_port: 11111
-    odom_frame_id: 'odom'
-    base_frame_id: 'base_link'
     is_ext_tof_attached: true
