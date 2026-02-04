@@ -9,50 +9,46 @@
 tello7:
   mission_control:
     ros__parameters:
-      initial_search_height: 1.2
+      initial_search_height: 1.10
       enable_waypoint_navigation: true
       standby_delay: 0.0
       waypoint_sequence:
-        - "id:5,action:ccw 90"
-        - "id:1,action:cw 90"
+        - "id:5,action:cw 90"
+        - "id:1,action:ccw 90"
         - "id:none,action:forward 400"
-        # - "id:8,action:none"
 
 tello4:
   mission_control:
     ros__parameters:
-      initial_search_height: 1.1
+      initial_search_height: 0.97
       enable_waypoint_navigation: true
       standby_delay: 15.0
       waypoint_sequence:
-        - "id:5,action:ccw 90"
-        - "id:1,action:cw 90"
+        - "id:5,action:cw 90"
+        - "id:1,action:ccw 90"
         - "id:none,action:forward 400"
         - "id:none,action:cw 45"
-        # - "id:8,action:none"
 
 tello17:
   mission_control:
     ros__parameters:
-      initial_search_height: 1.0
+      initial_search_height: 1.03
       enable_waypoint_navigation: true
       standby_delay: 30.0
       waypoint_sequence:
-        - "id:5,action:ccw 90"
-        - "id:1,action:cw 90"
+        - "id:5,action:cw 90"
+        - "id:1,action:ccw 90"
         - "id:none,action:forward 400"
         - "id:none,action:cw 90"
-        # - "id:8,action:none"
 
 tello1:
   mission_control:
     ros__parameters:
-      initial_search_height: 0.9
+      initial_search_height: 0.90
       enable_waypoint_navigation: true
       standby_delay: 45.0
       waypoint_sequence:
-        - "id:5,action:ccw 90"
-        - "id:1,action:cw 90"
+        - "id:5,action:cw 90"
+        - "id:1,action:ccw 90"
         - "id:none,action:forward 400"
         - "id:none,action:ccw 90"
-        # - "id:8,action:none"

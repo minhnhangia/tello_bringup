@@ -1,0 +1,51 @@
+# Configuration file for multiple Tello drones
+drones:
+  # - name: tello14
+  #   node_name: tello_driver
+  #   drone_ip: '192.168.0.114'
+  #   command_port: 38065
+  #   drone_port: 9014
+  #   data_port: 8014
+  #   video_port: 11114
+  #   uwb_tag_id: 8
+  #   is_ext_tof_attached: false
+
+  # - name: tello9
+  #   node_name: tello_driver
+  #   drone_ip: '192.168.0.109'
+  #   command_port: 38064
+  #   drone_port: 9009
+  #   data_port: 8009
+  #   video_port: 11109
+  #   uwb_tag_id: 11
+  #   is_ext_tof_attached: false
+
+  # - name: tello17
+  #   node_name: tello_driver
+  #   drone_ip: '192.168.0.117'
+  #   command_port: 38066
+  #   drone_port: 9017
+  #   data_port: 8017
+  #   video_port: 11117
+  #   uwb_tag_id: 3
+  #   is_ext_tof_attached: false
+
+  # - name: tello1
+  #   node_name: tello_driver
+  #   drone_ip: '192.168.0.101'
+  #   command_port: 38067
+  #   drone_port: 9001
+  #   data_port: 8001
+  #   video_port: 11101
+  #   uwb_tag_id: 4
+  #   is_ext_tof_attached: false
+
+  - name: tello7
+    node_name: tello_driver
+    drone_ip: '192.168.0.101'
+    command_port: 38067
+    drone_port: 9001
+    data_port: 8001
+    video_port: 11101
+    uwb_tag_id: 10
+    is_ext_tof_attached: false

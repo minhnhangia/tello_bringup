@@ -15,7 +15,7 @@ import yaml
 def generate_launch_description():
     # Get package directories
     pkg_tello_bringup = get_package_share_directory('tello_bringup')
-    config_file = os.path.join(pkg_tello_bringup, 'config', 'drone_params _uwb.yaml')
+    config_file = os.path.join(pkg_tello_bringup, 'config', 'drone_params_uwb.yaml')
 
     # Load the drones configuration
     with open(config_file, 'r') as f:

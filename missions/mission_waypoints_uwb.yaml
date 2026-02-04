@@ -1,0 +1,33 @@
+# Per-drone configuration for UWB-based waypoint navigation.
+
+tello7:
+  mission_control_uwb:
+    ros__parameters:
+      initial_search_height: 1.10
+      enable_waypoint_navigation: true
+      standby_delay: 0.0
+      waypoints_file: waypoints_demo.json
+
+tello4:
+  mission_control_uwb:
+    ros__parameters:
+      initial_search_height: 0.97
+      enable_waypoint_navigation: true
+      standby_delay: 15.0
+      waypoints_file: waypoints_demo.json
+
+tello17:
+  mission_control_uwb:
+    ros__parameters:
+      initial_search_height: 1.03
+      enable_waypoint_navigation: true
+      standby_delay: 30.0
+      waypoints_file: waypoints_demo.json
+
+tello1:
+  mission_control_uwb:
+    ros__parameters:
+      initial_search_height: 0.90
+      enable_waypoint_navigation: true
+      standby_delay: 45.0
+      waypoints_file: waypoints_demo.json
