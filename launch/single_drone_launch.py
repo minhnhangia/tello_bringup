@@ -116,4 +116,55 @@ def generate_launch_description():
             respawn=True
         ))
 
+        # 5. YOLO inference
+        multi_yolo_params = {
+            'drone_ids': [ns],
+            'model': 'best.pt',
+            'device': 'cuda:0',
+            'enable': True,
+            'threshold': 0.5,
+            'iou': 0.7,
+            'imgsz_height': 478,
+            'imgsz_width': 648,
+            'image_reliability': 2,  # BEST_EFFORT
+        }
+
+        nodes.append(Node(
+            package='yolo_ros',
+            executable='multi_yolo_node',
+            name='multi_yolo_node',
+            output='screen',
+            parameters=[multi_yolo_params],
+            respawn=True,
+        ))
+
+        # 6. Drone detector
+        nodes.append(Node(
+            package='yolo_ros',
+            executable='drone_detector_node',
+            name='drone_detector_node',
+            namespace=ns,
+            parameters=[
+                {
+                    'target_class': 'drone',
+                    'confidence_threshold': 0.6,
+                    'consecutive_frames': 3,
+                    'image_width': 648,
+                }
+            ],
+            output="screen",
+        ))
+
+        # 7. YOLO debug
+        nodes.append(Node(
+            package='yolo_ros',
+            executable='debug_node',
+            name='debug_node',
+            namespace=ns,
+            parameters=[{'image_reliability': 2}],  # BEST_EFFORT
+            remappings=[
+                ('detections', 'yolo/detections'),
+            ],
+        ))
+
     return LaunchDescription(nodes)

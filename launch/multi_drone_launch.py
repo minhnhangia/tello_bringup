@@ -101,7 +101,36 @@ def generate_launch_description():
             respawn=True
         ))
 
-    # 4. MiDaS inference (single node for all drones)
+        # 4. Drone detector
+        nodes.append(Node(
+            package='yolo_ros',
+            executable='drone_detector_node',
+            name='drone_detector_node',
+            namespace=ns,
+            parameters=[
+                {
+                    'target_class': 'drone',
+                    'confidence_threshold': 0.6,
+                    'consecutive_frames': 3,
+                    'image_width': 648,
+                }
+            ],
+            output='screen',
+        ))
+
+        # 5. YOLO debug
+        nodes.append(Node(
+            package='yolo_ros',
+            executable='debug_node',
+            name='debug_node',
+            namespace=ns,
+            parameters=[{'image_reliability': 2}],  # BEST_EFFORT
+            remappings=[
+                ('detections', 'yolo/detections'),
+            ],
+        ))
+
+    # 5. MiDaS inference (single node for all drones)
     drone_ids = [drone['name'] for drone in drones_config]
 
     # multi_midas_node parameters
@@ -119,7 +148,7 @@ def generate_launch_description():
         respawn=True
 	))
 
-    # 5. YOLO inference (single lifecycle node for all drones)
+    # 6. YOLO inference (single lifecycle node for all drones)
     multi_yolo_params = {
         'drone_ids': drone_ids,
         'model': 'best.pt',
