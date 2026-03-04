@@ -13,6 +13,8 @@
   <exec_depend>tello_midas</exec_depend>
   <exec_depend>tello_ros</exec_depend>
   <exec_depend>aruco_opencv</exec_depend>
+  <exec_depend>mission_control</exec_depend>
+  <exec_depend>yolo_ros</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

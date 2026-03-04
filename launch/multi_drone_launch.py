@@ -119,4 +119,26 @@ def generate_launch_description():
         respawn=True
 	))
 
+    # 5. YOLO inference (single lifecycle node for all drones)
+    multi_yolo_params = {
+        'drone_ids': drone_ids,
+        'model': 'best.pt',
+        'device': 'cuda:0',
+        'enable': True,
+        'threshold': 0.5,
+        'iou': 0.7,
+        'imgsz_height': 478,
+        'imgsz_width': 648,
+        'image_reliability': 2,  # BEST_EFFORT
+    }
+
+    nodes.append(Node(
+        package='yolo_ros',
+        executable='multi_yolo_node',
+        name='multi_yolo_node',
+        output='screen',
+        parameters=[multi_yolo_params],
+        respawn=True,
+    ))
+
     return LaunchDescription(nodes)
