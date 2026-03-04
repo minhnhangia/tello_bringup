@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Launch file for UWB position republisher node.
-Reads drone configuration from drone_params_uwb.yaml and republishes
-LinkTrack UWB position data to individual drone topics.
+Launch file for UWB position raw data publisher and UWB republisher node.
+UWB republisher reads drone configuration from drone_params_uwb.yaml and 
+republishes LinkTrack UWB position data to individual drone topics.
 """
 
 from launch import LaunchDescription
@@ -45,6 +45,20 @@ def generate_launch_description():
         emulate_tty=True,
     )
 
+    # Create the UWB raw data publisher node
+    uwb_publisher_node = Node(
+        package='nlink_parser',
+        executable='linktrack',
+        name='linktrack0',
+        output='screen',
+        parameters=[{
+            'port_name': '/dev/ttyUSB0',
+            'baud_rate': 921600,
+        }],
+        emulate_tty=True,
+    )
+
     return LaunchDescription([
         uwb_republisher_node,
+        uwb_publisher_node
     ])
