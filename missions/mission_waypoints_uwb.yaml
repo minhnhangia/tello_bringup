@@ -6,28 +6,28 @@ tello7:
       initial_search_height: 1.10
       enable_waypoint_navigation: true
       standby_delay: 0.0
-      waypoints_file: waypoints_demo.json
+      waypoints_file: mocap.json
 
 tello4:
   mission_control_uwb:
     ros__parameters:
       initial_search_height: 0.97
       enable_waypoint_navigation: true
-      standby_delay: 15.0
-      waypoints_file: waypoints_demo.json
+      standby_delay: 20.0
+      waypoints_file: mocap.json
 
 tello17:
   mission_control_uwb:
     ros__parameters:
       initial_search_height: 1.03
       enable_waypoint_navigation: true
-      standby_delay: 30.0
-      waypoints_file: waypoints_demo.json
+      standby_delay: 40.0
+      waypoints_file: mocap.json
 
 tello1:
   mission_control_uwb:
     ros__parameters:
       initial_search_height: 0.90
       enable_waypoint_navigation: true
-      standby_delay: 45.0
-      waypoints_file: waypoints_demo.json
+      standby_delay: 60.0
+      waypoints_file: mocap.json

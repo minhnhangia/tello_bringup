@@ -1,0 +1,9 @@
+{
+  "description": "Demo waypoint sequence for testing",
+  "waypoints": [
+    {"x": 1.34, "y": 1.50, "label": "start"},
+    {"x": 0.81, "y": 10.18, "label": "checkpoint_1"},
+    {"x": 5.36, "y": 10.46, "label": "checkpoint_2"},
+    {"x": 6.04, "y": 2.9, "label": "checkpoint_3"}
+  ]
+}
