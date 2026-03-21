@@ -41,11 +41,14 @@ def generate_launch_description():
             'input_topic': '/nlink_linktrack_anchorframe0',
             'drone_names': drone_names,
             'uwb_tag_ids': uwb_tag_ids,
+            'enable_udp_broadcast': True,
+            'udp_broadcast_port': 5000,
+            'udp_broadcast_address': '255.255.255.255',
         }],
         emulate_tty=True,
     )
 
-    # Create the UWB raw data publisher node
+    # Create the UWB raw data publisher node (direct connection)
     uwb_publisher_node = Node(
         package='nlink_parser',
         executable='linktrack',
@@ -57,6 +60,20 @@ def generate_launch_description():
         }],
         emulate_tty=True,
     )
+
+    # Create the UWB raw data publisher node (UDP)
+    # uwb_publisher_node = Node(
+    #     package='tello_uwb',
+    #     executable='uwb_listener',
+    #     name='uwb_listener',
+    #     output='screen',
+    #     parameters=[{
+    #         'bind_address': '0.0.0.0',
+    #         'port': 5000,
+    #         'output_topic': '/nlink_linktrack_anchorframe0',
+    #     }],
+    #     emulate_tty=True,
+    # )
 
     return LaunchDescription([
         uwb_republisher_node,
