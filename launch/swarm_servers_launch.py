@@ -41,6 +41,15 @@ def generate_launch_description():
 
     nodes.append(Node(
         package='tello_swarm',
+        executable='motoron_server',
+        name='motoron_server',
+        output='screen',
+        parameters=[takeoff_server_params],
+        respawn=True
+    ))
+
+    nodes.append(Node(
+        package='tello_swarm',
         executable='marker_manager',
         name='marker_manager',
         output='screen',
