@@ -4,7 +4,7 @@ drones:
     node_name: tello_driver
     drone_ip: '192.168.0.107'
     command_port: 38065
-    drone_port: 9007
+    drone_port: 8889
     data_port: 8007
     video_port: 11107
     is_ext_tof_attached: true
@@ -13,7 +13,7 @@ drones:
     node_name: tello_driver
     drone_ip: '192.168.0.104'
     command_port: 38064
-    drone_port: 9004
+    drone_port: 8889
     data_port: 8004
     video_port: 11104
     is_ext_tof_attached: true
@@ -22,7 +22,7 @@ drones:
     node_name: tello_driver
     drone_ip: '192.168.0.117'
     command_port: 38066
-    drone_port: 9017
+    drone_port: 8889
     data_port: 8017
     video_port: 11117
     is_ext_tof_attached: true
@@ -31,25 +31,25 @@ drones:
     node_name: tello_driver
     drone_ip: '192.168.0.101'
     command_port: 38067
-    drone_port: 9001
+    drone_port: 8889
     data_port: 8001
     video_port: 11101
     is_ext_tof_attached: true
 
-  # - name: tello20
-  #   node_name: tello_driver
-  #   drone_ip: '192.168.0.120'
-  #   command_port: 38068
-  #   drone_port: 9020
-  #   data_port: 8020
-  #   video_port: 11120
-  #   is_ext_tof_attached: true
+  - name: tello20
+    node_name: tello_driver
+    drone_ip: '192.168.0.120'
+    command_port: 38068
+    drone_port: 8889
+    data_port: 8020
+    video_port: 11120
+    is_ext_tof_attached: true
 
-  # - name: tello21
-  #   node_name: tello_driver
-  #   drone_ip: '192.168.0.121'
-  #   command_port: 38069
-  #   drone_port: 9021
-  #   data_port: 8021
-  #   video_port: 11121
-  #   is_ext_tof_attached: true
+  - name: tello21
+    node_name: tello_driver
+    drone_ip: '192.168.0.121'
+    command_port: 38069
+    drone_port: 8889
+    data_port: 8021
+    video_port: 11121
+    is_ext_tof_attached: true
